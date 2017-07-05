@@ -6,26 +6,19 @@ Important Constants: Screen width, height, canvas, context, Paddle X, CPU X
 Variables:  Paddle Y, Ball X, Ball Y, Ball Speed, CPU Y, CPU Speed?, Player Score, CPU Score
 */
 
-class Paddle{
+var playerPaddle
+var cpuPaddle
 
+var myGameArea = {
+  canvas: document.createElement('canvas'),
+  start: function () {
+    this.canvas.width = window.innerWidth
+    this.canvas.height = 270
+    this.context = this.canvas.getContext('2d')
+    document.body.insertBefore(this.canvas, document.body.childNodes[0])
+  }
 }
-class Ball{
-
-}
-init();
-/*
-1) Initialise the Ball
-2) Initialise the Paddles
-3) Initialise the Scores
-4) Initialise the update timer
-*/
-function init(){
-  
-}
-
-/*
-Game Loop: listen for user input and update all object info (each frame)
-*/
-function update(){
-
+startGame()
+function startGame () {
+  myGameArea.start()
 }
